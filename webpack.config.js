@@ -1,7 +1,10 @@
 module.exports = {
-	entry:'./src/js/app/entry.js',
+	entry:{
+		bundle1:'./src/js/app/test1.js',
+		bundle2:'./src/js/app/test2.js',
+	},
 	output:{
-		filename:'bundle.js',
+		filename:'[name].js',
 		path:__dirname + '/src/js/public'
 	}
 }
