@@ -1,10 +1,16 @@
 module.exports = {
-	entry:{
-		bundle1:'./src/js/app/test1.js',
-		bundle2:'./src/js/app/test2.js',
-	},
+	entry:'./src/js/app/entry.jsx',
 	output:{
-		filename:'[name].js',
+		filename:'bundle.js',
 		path:__dirname + '/src/js/public'
+	},
+	module:{
+		loaders:[
+			{
+				test:/\.js[x]?$/,
+				exclude:/node_modules/,
+				loader:'babel-loader?presets[]=es2015&presets[]=react'
+			}
+		]
 	}
 }
